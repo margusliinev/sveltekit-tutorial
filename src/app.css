@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: #18181b;
+        --foreground: #fafafa;
+
+        --primary: #f97316;
+        --primary-foreground: #fafafa;
+        --primary-hover: #fb923c;
+    }
+
+    body {
+        font-family: 'Inter', 'Inter Fallback';
+        color: var(--foreground);
+        background-color: var(--background);
+    }
+}
