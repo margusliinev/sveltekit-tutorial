@@ -3,6 +3,9 @@ export default {
     content: ['./src/**/*.{html,js,svelte,ts}'],
     theme: {
         extend: {
+            fontFamily: {
+                Inter: ['Inter', 'Inter Fallback']
+            },
             width: {
                 'screen-90': '90vw',
                 'screen-80': '80vw',

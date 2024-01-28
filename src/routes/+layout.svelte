@@ -1,6 +1,6 @@
 <script>
-    import '../fonts.css';
-    import '../app.css';
+    import '../styles/fonts.css';
+    import '../styles/index.css';
 </script>
 
 <slot />
