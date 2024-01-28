@@ -6,6 +6,10 @@ export default {
             fontFamily: {
                 Inter: ['Inter', 'Inter Fallback']
             },
+            screens: {
+                xs: '560px',
+                xxs: '440px'
+            },
             width: {
                 'screen-90': '90vw',
                 'screen-80': '80vw',
