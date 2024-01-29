@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     let isMobileMenuOpen = $state(false);
 
     function toggleMobileMenu() {
@@ -13,6 +13,11 @@
                 <span class="text-2xl font-semibold sm:text-3xl">SprintPilot</span>
             </a>
             <ul class="hidden items-center text-sm font-medium sm:flex">
+                <form method="post" action="?/setTheme" class="mr-4 flex items-center gap-4">
+                    <button class="h-[1.2rem] w-[1.2rem]" name="theme" value="light">Sun</button>
+                    <button class="h-[1.2rem] w-[1.2rem]" name="theme" value="dark">Moon</button>
+                    <span class="sr-only">Toggle theme</span>
+                </form>
                 <li>
                     <a href="/pricing" class="px-6 py-2 transition-colors hover:text-primary-hover"> Pricing </a>
                 </li>
