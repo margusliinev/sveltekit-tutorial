@@ -12,7 +12,7 @@
         --primary-hover: #0284c7;
     }
 
-    [data-theme='dark'] {
+    .dark {
         --background: #18181b;
         --foreground: #fafafa;
 
