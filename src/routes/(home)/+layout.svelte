@@ -18,14 +18,17 @@
 </script>
 
 <main class="grid h-full min-h-screen w-full place-items-center">
-    <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center border-b-2 border-zinc-800 bg-background shadow-sm">
+    <div class="fixed inset-0 -z-10 transform-gpu overflow-hidden opacity-10 blur-3xl" aria-hidden="true">
+        <div class="h-full w-full bg-gradient-to-tr from-background to-foreground opacity-10"></div>
+    </div>
+    <nav class="border-border fixed top-0 z-50 grid h-16 w-full place-items-center border-b shadow">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
-            <a href="/" class="flex items-center gap-3" onclick={toggleMobileMenu}>
-                <span class="text-2xl font-semibold sm:text-3xl">SprintPilot</span>
+            <a href="/" class="flex items-center gap-3 transition-none duration-0" onclick={toggleMobileMenu}>
+                <span class="text-2xl font-extrabold uppercase italic transition-none duration-0 sm:text-3xl">sprintpilot</span>
             </a>
             <ul class="hidden items-center text-sm font-medium sm:flex">
                 <li>
-                    <form method="post" action="?/setTheme" use:enhance={submitUpdateTheme} class="grid px-4">
+                    <form method="post" action="/?/setTheme" use:enhance={submitUpdateTheme} class="grid px-4">
                         <button name="theme" value="light" class="absolute h-[1rem] w-[1rem] rotate-90 scale-0 dark:rotate-0 dark:scale-100">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -60,13 +63,13 @@
                     </form>
                 </li>
                 <li>
-                    <a href="/pricing" class="px-6 py-2 transition-colors hover:text-primary-hover"> Pricing </a>
+                    <a href="/pricing" class="px-6 py-2 hover:text-primary-hover"> Pricing </a>
                 </li>
                 <li>
-                    <a href="/login" class="py-2 pl-6 pr-10 transition-colors hover:text-primary-hover"> Login </a>
+                    <a href="/login" class="py-2 pl-6 pr-10 hover:text-primary-hover"> Login </a>
                 </li>
                 <li class="font-semibold">
-                    <a href="/register" class="flex items-center gap-1 rounded-full bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:bg-primary-hover">
+                    <a href="/register" class="flex items-center gap-1 rounded-full bg-primary px-4 py-2.5 text-primary-foreground hover:bg-primary-hover">
                         Register
                         <span aria-hidden="true">&rarr;</span>
                     </a>

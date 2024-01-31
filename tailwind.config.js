@@ -41,6 +41,16 @@ export default {
                     DEFAULT: 'var(--primary)',
                     foreground: 'var(--primary-foreground)',
                     hover: 'var(--primary-hover)'
+                },
+                card: {
+                    DEFAULT: 'var(--card)',
+                    foreground: 'var(--card-foreground)',
+                    hover: 'var(--card-hover)'
+                },
+                border: {
+                    DEFAULT: 'var(--border)',
+                    foreground: 'var(--border-foreground)',
+                    hover: 'var(--border-hover)'
                 }
             }
         }
