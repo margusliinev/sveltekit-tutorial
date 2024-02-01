@@ -10,9 +10,6 @@
         --primary: #0284c7;
         --primary-foreground: #fafafa;
         --primary-hover: #0369a1;
-
-        --card: #d4d4d8;
-        --border: #d4d4d8;
     }
 
     [data-theme='dark'] {
@@ -22,9 +19,6 @@
         --primary: #7dd3fc;
         --primary-foreground: #18181b;
         --primary-hover: #bae6fd;
-
-        --card: #3f3f46;
-        --border: #3f3f46;
     }
 
     body {
