@@ -3,7 +3,7 @@
 </script>
 
 <header class="my-32 w-screen-90 max-w-4xl text-center">
-    <h3 class="border-border mx-auto mb-6 w-fit rounded-full border px-7 py-2.5 text-sm font-medium">{currentDate}: We are now in open beta!</h3>
+    <h3 class="mx-auto mb-6 w-fit rounded-full border border-border px-7 py-2.5 text-sm font-medium">{currentDate}: We are now in open beta!</h3>
     <h1 class="grid text-3xl font-bold tracking-tight xxs:text-4xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl">
         <span class="mb-2 text-primary">Build better software</span>
         <span>with sprintpilot</span>

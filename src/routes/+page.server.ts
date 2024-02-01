@@ -3,9 +3,7 @@ import type { Actions } from '@sveltejs/kit';
 export const actions: Actions = {
     setTheme: async ({ cookies, request }) => {
         const formData = await request.formData();
-        const theme = formData.get('theme');
-
-        if (typeof theme !== 'string') return;
+        const theme = String(formData.get('theme'));
 
         if (theme) {
             cookies.set('theme', theme, {

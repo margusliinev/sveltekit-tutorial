@@ -20,7 +20,7 @@
             <a href="/" class="rounded-full bg-primary px-3.5 py-2.5 text-primary-foreground transition-colors hover:bg-primary-hover">Go Back Home</a>
             <a href="/login" class="group flex items-center gap-1">
                 Login Page
-                <span aria-hidden="true" class="font-normal transition-colors group-hover:text-primary">&rarr;</span>
+                <span aria-hidden="true" class="font-normal transition-colors group-hover:text-primary">&rarrj;</span>
             </a>
         </div>
     </div>
