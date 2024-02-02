@@ -1,18 +1,18 @@
 <script lang="ts">
-    import type { SubmitFunction } from '@sveltejs/kit';
-    import { enhance } from '$app/forms';
+    import type { SubmitFunction } from '@sveltejs/kit'
+    import { enhance } from '$app/forms'
 
-    let isMobileMenuOpen = $state(false);
+    let isMobileMenuOpen = $state(false)
 
     function toggleMobileMenu() {
-        isMobileMenuOpen = !isMobileMenuOpen;
+        isMobileMenuOpen = !isMobileMenuOpen
     }
 
     const submitUpdateTheme: SubmitFunction = ({ formData }) => {
-        const theme = String(formData.get('theme'));
+        const theme = String(formData.get('theme'))
 
-        if (theme) document.documentElement.setAttribute('data-theme', theme);
-    };
+        if (theme) document.documentElement.setAttribute('data-theme', theme)
+    }
 </script>
 
 <main class="grid h-screen min-h-screen w-screen place-items-center">

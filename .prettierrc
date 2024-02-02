@@ -3,7 +3,7 @@
     "tabWidth": 4,
     "jsxSingleQuote": true,
     "singleQuote": true,
-    "semi": true,
+    "semi": false,
     "trailingComma": "none",
     "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
     "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]

@@ -14,6 +14,11 @@
         "lint": "eslint .",
         "test": "vitest --run"
     },
+    "dependencies": {
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "tailwind-merge": "^2.2.1"
+    },
     "devDependencies": {
         "@sveltejs/adapter-auto": "^3.0.0",
         "@sveltejs/kit": "^2.0.0",

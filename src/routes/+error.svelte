@@ -1,6 +1,6 @@
 <script>
     /* eslint-disable */
-    import { page } from '$app/stores';
+    import { page } from '$app/stores'
 </script>
 
 <main class="grid h-screen min-h-screen w-screen place-items-center">

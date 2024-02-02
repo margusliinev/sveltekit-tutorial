@@ -1,5 +1,7 @@
 <script>
-    const currentDate = new Date(Date.now()).toUTCString().split(' ').slice(1, 3).join(' ');
+    import Button from '$lib/components/Button.svelte'
+
+    const currentDate = new Date(Date.now()).toUTCString().split(' ').slice(1, 3).join(' ')
 </script>
 
 <header class="my-32 w-screen-90 max-w-4xl text-center">
@@ -8,12 +10,13 @@
         <span class="mb-2 text-primary">Build better software</span>
         <span>with sprintpilot</span>
     </h1>
-    <h2 class="text-md mx-auto mt-6 max-w-2xl md:text-lg">
+    <h2 class="mx-auto mt-6 max-w-2xl md:text-lg">
         Sprintpilot is a project management tool of choice for developers around the world to improve real-time collaboration. With its built-in sprint planner and progress tracker, Sprintpilot helps
         you ship better software, faster.
     </h2>
     <div class="mt-6 flex items-center justify-center gap-6 text-sm md:mt-12">
-        <a href="/register" class="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary-hover">Get Started</a>
+        <!-- <a href="/register" class="rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary-hover">Get Started</a> -->
+        <Button class="rounded-full">Get Started</Button>
         <a href="/login" class="group flex items-center gap-1 font-medium">
             Want to demo?
             <span aria-hidden="true" class="transition-colors group-hover:text-primary">&rarr;</span>
