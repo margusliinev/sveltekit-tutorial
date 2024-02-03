@@ -1,9 +1,9 @@
 <script lang="ts">
     import type { SubmitFunction } from '@sveltejs/kit'
     /* eslint-disable */
+    import { Button, Link } from '$components'
     import { enhance } from '$app/forms'
     import { page } from '$app/stores'
-    import Link from '$components/Link.svelte'
 
     let isMobileMenuOpen = $state(false)
 
@@ -25,7 +25,7 @@
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
             <Link href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</Link>
             <form method="post" use:enhance={submitUpdateTheme} class="grid">
-                <button formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 font-semibold transition-all duration-300 dark:scale-0">
+                <Button variant="ghost" size="none" formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 dark:scale-0">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -41,8 +41,8 @@
                             d="M20 12h2"
                         /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg
                     >
-                </button>
-                <button formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="scale-0 font-semibold transition-all duration-300 dark:scale-100">
+                </Button>
+                <Button variant="ghost" size="none" formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="scale-0 dark:scale-100">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -55,7 +55,7 @@
                         stroke-linejoin="round"
                         class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg
                     >
-                </button>
+                </Button>
             </form>
         </div>
     </nav>

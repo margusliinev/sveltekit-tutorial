@@ -1,7 +1,7 @@
 <script>
     /* eslint-disable */
+    import { Link } from '$components'
     import { page } from '$app/stores'
-    import Link from '$components/Link.svelte'
 </script>
 
 <main class="grid h-screen min-h-screen w-screen place-items-center">

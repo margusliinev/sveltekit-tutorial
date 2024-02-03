@@ -1,5 +1,5 @@
 <script>
-    import Link from '$components/Link.svelte'
+    import { Link } from '$components'
 
     const currentDate = new Date(Date.now()).toUTCString().split(' ').slice(1, 3).join(' ')
 </script>
