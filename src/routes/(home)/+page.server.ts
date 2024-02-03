@@ -1,6 +1,6 @@
 import type { Actions } from '@sveltejs/kit'
-import { DOMAIN } from '$env/static/private'
 import { redirect } from '@sveltejs/kit'
+import { env } from '$env/dynamic/private'
 
 export const actions: Actions = {
     setTheme: async ({ cookies, url }) => {
@@ -26,7 +26,7 @@ export const actions: Actions = {
         })
 
         const redirectToURL = new URL(redirectTo)
-        if (redirectToURL.hostname === DOMAIN) {
+        if (redirectToURL.hostname === env.DOMAIN) {
             throw redirect(303, redirectToURL.pathname)
         } else {
             console.error('Invalid redirect URL:', redirectTo)

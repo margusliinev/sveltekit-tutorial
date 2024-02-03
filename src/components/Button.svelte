@@ -6,9 +6,9 @@
     import { cn } from '$lib'
 
     interface ButtonProps extends HTMLButtonAttributes, VariantProps<typeof buttonVariants> {
-        children?: Snippet
-        variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'destructive'
-        size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+        children: Snippet
+        variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'destructive' | 'ghost'
+        size?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     }
 
     let { children, variant, size, class: className, ...props } = $props<ButtonProps>()
@@ -22,9 +22,11 @@
                     secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-hover focus-visible:ring-secondary',
                     success: 'bg-success text-success-foreground hover:bg-success-hover focus-visible:ring-success',
                     warning: 'bg-warning text-warning-foreground hover:bg-warning-hover focus-visible:ring-warning',
-                    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive-hover focus-visible:ring-destructive'
+                    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive-hover focus-visible:ring-destructive',
+                    ghost: 'focus-visible:ring-foreground'
                 },
                 size: {
+                    none: 'px-0 py-0',
                     xs: 'px-3 py-1.5',
                     sm: 'px-4 py-2',
                     md: 'px-6 py-3',
@@ -40,8 +42,4 @@
     )
 </script>
 
-{#if children}
-    <button {...props} class={cn(buttonVariants({ variant, size, className }))}>{@render children()}</button>
-{:else}
-    <button {...props} class={cn(buttonVariants({ variant, size, className }))}></button>
-{/if}
+<button {...props} class={cn(buttonVariants({ variant, size, className }))}>{@render children()}</button>

@@ -1,7 +1,9 @@
 <script lang="ts">
     import type { SubmitFunction } from '@sveltejs/kit'
-    import { page } from '$app/stores'
+    /* eslint-disable */
     import { enhance } from '$app/forms'
+    import { page } from '$app/stores'
+    import Link from '$components/Link.svelte'
 
     let isMobileMenuOpen = $state(false)
 
@@ -21,7 +23,7 @@
 <main class="grid h-screen min-h-screen w-screen place-items-center">
     <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center bg-background">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
-            <a href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</a>
+            <Link href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</Link>
             <form method="post" use:enhance={submitUpdateTheme} class="grid">
                 <button formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 font-semibold transition-all duration-300 dark:scale-0">
                     <svg

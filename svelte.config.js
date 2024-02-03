@@ -5,7 +5,11 @@ import adapter from '@sveltejs/adapter-auto'
 const config = {
     preprocess: vitePreprocess(),
     kit: {
-        adapter: adapter()
+        adapter: adapter(),
+        alias: {
+            $components: './src/components',
+            $lib: './src/lib'
+        }
     },
     compilerOptions: {
         runes: true
