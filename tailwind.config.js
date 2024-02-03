@@ -41,6 +41,26 @@ export default {
                     DEFAULT: 'var(--primary)',
                     foreground: 'var(--primary-foreground)',
                     hover: 'var(--primary-hover)'
+                },
+                secondary: {
+                    DEFAULT: 'var(--secondary)',
+                    foreground: 'var(--secondary-foreground)',
+                    hover: 'var(--secondary-hover)'
+                },
+                success: {
+                    DEFAULT: 'var(--success)',
+                    foreground: 'var(--success-foreground)',
+                    hover: 'var(--success-hover)'
+                },
+                warning: {
+                    DEFAULT: 'var(--warning)',
+                    foreground: 'var(--warning-foreground)',
+                    hover: 'var(--warning-hover)'
+                },
+                destructive: {
+                    DEFAULT: 'var(--destructive)',
+                    foreground: 'var(--destructive-foreground)',
+                    hover: 'var(--destructive-hover)'
                 }
             }
         }
