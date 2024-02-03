@@ -1,9 +1,18 @@
 import type { Handle } from '@sveltejs/kit'
 
 export const handle = (async ({ event, resolve }) => {
-    const theme = event.cookies.get('theme')
+    let theme: string | null = null
 
-    if (theme) {
+    const newTheme = event.url.searchParams.get('theme')
+    const cookieTheme = event.cookies.get('theme')
+
+    if (newTheme) {
+        theme = newTheme
+    } else if (cookieTheme) {
+        theme = cookieTheme
+    }
+
+    if (theme === 'dark' || theme === 'light') {
         return await resolve(event, {
             transformPageChunk: ({ html }) => html.replace('data-theme=""', `data-theme="${theme}"`)
         })

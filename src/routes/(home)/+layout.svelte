@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { SubmitFunction } from '@sveltejs/kit'
+    import { page } from '$app/stores'
     import { enhance } from '$app/forms'
 
     let isMobileMenuOpen = $state(false)
@@ -8,10 +9,12 @@
         isMobileMenuOpen = !isMobileMenuOpen
     }
 
-    const submitUpdateTheme: SubmitFunction = ({ formData }) => {
-        const theme = String(formData.get('theme'))
+    const submitUpdateTheme: SubmitFunction = ({ action }) => {
+        const theme = action.searchParams.get('theme')
 
-        if (theme) document.documentElement.setAttribute('data-theme', theme)
+        if (theme === 'dark' || theme === 'light') {
+            document.documentElement.setAttribute('data-theme', theme)
+        }
     }
 </script>
 
@@ -19,8 +22,8 @@
     <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center bg-background">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
             <a href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</a>
-            <form method="post" action="/?/setTheme" use:enhance={submitUpdateTheme} class="grid">
-                <button name="theme" value="light" class="absolute scale-0 font-semibold transition-all duration-300 dark:scale-100">
+            <form method="post" use:enhance={submitUpdateTheme} class="grid">
+                <button formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 font-semibold transition-all duration-300 dark:scale-0">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -37,7 +40,7 @@
                         /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg
                     >
                 </button>
-                <button name="theme" value="dark" class="scale-100 font-semibold transition-all duration-300 dark:scale-0">
+                <button formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="scale-0 font-semibold transition-all duration-300 dark:scale-100">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
