@@ -12,7 +12,7 @@
     let { id, name, class: className, ...props } = $props<InputProps>()
 
     let inputVariants = cva(
-        'h-10 flex w-full rounded-md bg-background px-3 py-2 text-sm ring-1 ring-inset ring-input ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-input-placeholder focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-focus disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:ring-input-invalid'
+        'h-10 flex w-full rounded-md bg-input px-3 py-2 text-sm ring-1 ring-inset ring-border ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-input-placeholder focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-focus disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:ring-input-invalid'
     )
 </script>
 

@@ -4,33 +4,37 @@
 
 @layer base {
     :root {
-        --background: #fafafa;
+        --background: #f0f9ff;
         --foreground: #18181b;
 
         --primary: #0284c7;
-        --primary-foreground: #fafafa;
+        --primary-foreground: #f0f9ff;
         --primary-hover: #0369a1;
 
         --secondary: #71717a;
-        --secondary-foreground: #fafafa;
+        --secondary-foreground: #f0f9ff;
         --secondary-hover: #52525a;
 
         --success: #10b981;
-        --success-foreground: #fafafa;
+        --success-foreground: #f0f9ff;
         --success-hover: #059669;
 
         --warning: #eab308;
-        --warning-foreground: #fafafa;
+        --warning-foreground: #f0f9ff;
         --warning-hover: #ca8a04;
 
         --destructive: #ef4444;
-        --destructive-foreground: #fafafa;
+        --destructive-foreground: #f0f9ff;
         --destructive-hover: #dc2626;
 
-        --input: #d4d4d8;
+        --input: #fff;
         --input-focus: #0284c7;
         --input-placeholder: #71717a;
         --input-invalid: #ef4444;
+
+        --border: #d4d4d8;
+        --border-strong: #a1a1aa;
+        --card: #ffffff;
     }
 
     [data-theme='dark'] {
@@ -57,10 +61,14 @@
         --destructive-foreground: #18181b;
         --destructive-hover: #fca5a5;
 
-        --input: #3f3f46;
+        --input: #18181b;
         --input-focus: #7dd3fc;
         --input-placeholder: #a1a1aa;
         --input-invalid: #fca5a5;
+
+        --border: #3f3f46;
+        --border-strong: #52525b;
+        --card: #27272a;
     }
 
     body {

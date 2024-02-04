@@ -64,9 +64,17 @@ export default {
                 },
                 input: {
                     DEFAULT: 'var(--input)',
+                    border: 'var(--input-border)',
                     focus: 'var(--input-focus)',
                     placeholder: 'var(--input-placeholder)',
                     invalid: 'var(--input-invalid)'
+                },
+                border: {
+                    DEFAULT: 'var(--border)',
+                    strong: 'var(--border-strong)'
+                },
+                card: {
+                    DEFAULT: 'var(--card)'
                 }
             }
         }

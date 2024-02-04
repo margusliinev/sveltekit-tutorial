@@ -2,10 +2,11 @@
     import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
 </script>
 
-<div class="my-20 w-screen-90 max-w-md rounded-lg border border-input px-6 py-8 shadow-sm">
-    <div class="grid place-items-center">
-        <img src="apple-touch-icon.png" alt="logo" width={40} height={40} class="mb-2" />
-        <h1 class="mb-1 text-2xl font-semibold">Create an account</h1>
+<div class="bg-card border-border my-20 w-screen-90 max-w-md rounded-lg border px-6 py-8 shadow">
+    <div class="grid place-items-center text-center">
+        <img src="logo-light.png" alt="light logo" width="50" height="50" class="hidden aspect-auto dark:block" />
+        <img src="logo-dark.png" alt="dark logo" width="50" height="50" class="visible aspect-auto dark:hidden" />
+        <h1 class="mt-2 text-2xl font-bold">Create an account</h1>
         <h2 class="mb-8 text-sm">And lets get you started with a free plan</h2>
     </div>
     <Form method="POST">
@@ -24,10 +25,10 @@
             <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={undefined} />
             <InputError id="password-error"></InputError>
         </FormField>
-        <Button size="sm">Register</Button>
+        <Button size="sm" class="mt-2">Register</Button>
     </Form>
-    <div class="mt-2 flex items-center justify-center gap-2">
-        <p class="text-sm">Already have an account?</p>
-        <Link href="/login">Login</Link>
+    <div class="mt-4 flex items-center justify-center gap-2">
+        <span class="text-sm">Already have an account?</span>
+        <Link href="/login" class="text-primary hover:text-primary-hover">Login</Link>
     </div>
 </div>

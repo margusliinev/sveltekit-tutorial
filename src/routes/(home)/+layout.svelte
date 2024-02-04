@@ -21,7 +21,7 @@
 </script>
 
 <main class="grid h-screen min-h-screen w-screen place-items-center">
-    <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center bg-background">
+    <nav class="border-border fixed top-0 z-50 grid h-16 w-full place-items-center border-b bg-background shadow">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
             <Link href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</Link>
             <form method="post" use:enhance={submitUpdateTheme} class="grid">
