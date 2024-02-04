@@ -15,11 +15,11 @@
     let { children, href, variant, size, class: className, ...props } = $props<LinkProps>()
 
     let linkVariants = cva(
-        'inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-offset-2 ring-offset-background focus-visible:ring-2 cursor-pointer disabled:opacity-50 disabled:pointer-events-none',
+        'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap focus-visible:outline-none focus-visible:ring-offset-2 ring-offset-background focus-visible:ring-2 cursor-pointer disabled:opacity-50 disabled:pointer-events-none',
         {
             variants: {
                 variant: {
-                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary',
+                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary dark:font-semibold',
                     ghost: 'focus-visible:ring-foreground'
                 },
                 size: {

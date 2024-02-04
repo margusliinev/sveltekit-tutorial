@@ -1,62 +1,61 @@
 <script lang="ts">
-    import type { SubmitFunction } from '@sveltejs/kit'
     /* eslint-disable */
-    import { Button, Link } from '$components'
-    import { enhance } from '$app/forms'
-    import { page } from '$app/stores'
+    import { Button, Link } from '$components/ui'
+    import { ThemeToggle } from '$components'
 
     let isMobileMenuOpen = $state(false)
 
     function toggleMobileMenu() {
         isMobileMenuOpen = !isMobileMenuOpen
     }
-
-    const submitUpdateTheme: SubmitFunction = ({ action }) => {
-        const theme = action.searchParams.get('theme')
-
-        if (theme === 'dark' || theme === 'light') {
-            document.documentElement.setAttribute('data-theme', theme)
-        }
-    }
 </script>
 
 <main class="grid h-screen min-h-screen w-screen place-items-center">
-    <nav class="border-border fixed top-0 z-50 grid h-16 w-full place-items-center border-b bg-background shadow">
+    <div class="fixed inset-0 -z-10 transform-gpu overflow-hidden opacity-40 blur-3xl" aria-hidden="true">
+        <div class="h-full w-full bg-gradient-to-tr from-background to-foreground opacity-10"></div>
+    </div>
+    <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center border-b border-border bg-navbar shadow">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
-            <Link href="/" class="text-3xl font-extrabold uppercase italic" onclick={toggleMobileMenu}>sprintpilot</Link>
-            <form method="post" use:enhance={submitUpdateTheme} class="grid">
-                <Button variant="ghost" size="none" formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 dark:scale-0">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-sun"
-                        ><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path
-                            d="M20 12h2"
-                        /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg
-                    >
-                </Button>
-                <Button variant="ghost" size="none" formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="scale-0 dark:scale-100">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg
-                    >
-                </Button>
-            </form>
+            <Link href="/" class="text-3xl font-extrabold uppercase italic">sprintpilot</Link>
+            <ul class="hidden items-center gap-8 sm:flex">
+                <li>
+                    <Link href="/pricing">Pricing</Link>
+                </li>
+                <li>
+                    <Link href="/login">Login</Link>
+                </li>
+                <li>
+                    <Link href="/register">Register</Link>
+                </li>
+                <li>
+                    <ThemeToggle />
+                </li>
+            </ul>
+            <ul class={isMobileMenuOpen ? 'fixed inset-0 z-50 mt-16 bg-navbar p-8 sm:hidden' : 'hidden'}>
+                <li class="flex w-full border-b border-border-strong py-4">
+                    <ThemeToggle />
+                </li>
+                <li class="block w-full border-b border-border-strong py-5">
+                    <Link href="/register" onclick={toggleMobileMenu}>Register</Link>
+                </li>
+                <li class="block w-full border-b border-border-strong py-5">
+                    <Link href="/login" onclick={toggleMobileMenu}>Login</Link>
+                </li>
+                <li class="block w-full border-b border-border-strong py-5">
+                    <Link href="/pricing" onclick={toggleMobileMenu}>Pricing</Link>
+                </li>
+            </ul>
+            <Button size="none" variant="ghost" onclick={toggleMobileMenu} class="sm:hidden" aria-label="toggle menu">
+                {#if isMobileMenuOpen}
+                    <svg class="h-6 w-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                {:else}
+                    <svg class="h-6 w-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                {/if}
+            </Button>
         </div>
     </nav>
     <slot />

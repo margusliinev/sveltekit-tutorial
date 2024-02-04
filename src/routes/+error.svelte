@@ -1,6 +1,6 @@
 <script>
     /* eslint-disable */
-    import { Link } from '$components'
+    import { Link } from '$components/ui'
     import { page } from '$app/stores'
 </script>
 

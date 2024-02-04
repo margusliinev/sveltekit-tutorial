@@ -36,6 +36,7 @@ export default {
             colors: {
                 background: 'var(--background)',
                 foreground: 'var(--foreground)',
+                navbar: 'var(--navbar)',
 
                 primary: {
                     DEFAULT: 'var(--primary)',

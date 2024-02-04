@@ -1,12 +1,12 @@
 <script>
-    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
+    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components/ui'
 </script>
 
-<div class="bg-card border-border my-20 w-screen-90 max-w-md rounded-lg border px-6 py-8 shadow">
+<div class="my-20 w-screen-90 max-w-md rounded-lg border border-border bg-card px-6 py-8 shadow">
     <div class="grid place-items-center text-center">
         <img src="logo-light.png" alt="light logo" width="50" height="50" class="hidden aspect-auto dark:block" />
         <img src="logo-dark.png" alt="dark logo" width="50" height="50" class="visible aspect-auto dark:hidden" />
-        <h1 class="mt-2 text-2xl font-bold">Create an account</h1>
+        <h1 class="mt-2 text-2xl font-semibold">Create an account</h1>
         <h2 class="mb-8 text-sm">And lets get you started with a free plan</h2>
     </div>
     <Form method="POST">
