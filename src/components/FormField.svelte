@@ -6,7 +6,7 @@
     import { cn } from '$lib'
 
     interface FormFieldProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof formFieldVariants> {
-        children: Snippet
+        children?: Snippet
     }
 
     let { children, class: className, ...props } = $props<FormFieldProps>()
@@ -14,4 +14,8 @@
     let formFieldVariants = cva('space-y-1')
 </script>
 
-<div {...props} class={cn(formFieldVariants({ className }))}>{@render children()}</div>
+{#if children}
+    <div {...props} class={cn(formFieldVariants({ className }))}>{@render children()}</div>
+{:else}
+    <div {...props} class={cn(formFieldVariants({ className }))}></div>
+{/if}

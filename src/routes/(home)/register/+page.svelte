@@ -1,5 +1,5 @@
 <script>
-    import { Button, Input, Label, Link, FormField, Form } from '$components'
+    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
 </script>
 
 <div class="my-20 w-screen-90 max-w-md rounded-lg border border-input px-6 py-8 shadow-sm">
@@ -12,14 +12,17 @@
         <FormField>
             <Label for="username">Username</Label>
             <Input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid={undefined} />
+            <InputError id="username-error"></InputError>
         </FormField>
         <FormField>
             <Label for="email">Email</Label>
             <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={undefined} />
+            <InputError id="email-error"></InputError>
         </FormField>
         <FormField>
             <Label for="password">Password</Label>
             <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={undefined} />
+            <InputError id="password-error"></InputError>
         </FormField>
         <Button size="sm">Register</Button>
     </Form>

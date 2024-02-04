@@ -65,7 +65,8 @@ export default {
                 input: {
                     DEFAULT: 'var(--input)',
                     focus: 'var(--input-focus)',
-                    placeholder: 'var(--input-placeholder)'
+                    placeholder: 'var(--input-placeholder)',
+                    invalid: 'var(--input-invalid)'
                 }
             }
         }

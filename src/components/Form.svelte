@@ -6,7 +6,7 @@
     import { cn } from '$lib'
 
     interface FormProps extends HTMLFormAttributes, VariantProps<typeof formVariants> {
-        children: Snippet
+        children?: Snippet
     }
 
     let { children, class: className, ...props } = $props<FormProps>()
@@ -14,4 +14,8 @@
     let formVariants = cva('grid gap-4')
 </script>
 
-<form {...props} class={cn(formVariants({ className }))}>{@render children()}</form>
+{#if children}
+    <form {...props} class={cn(formVariants({ className }))}>{@render children()}</form>
+{:else}
+    <form {...props} class={cn(formVariants({ className }))}></form>
+{/if}

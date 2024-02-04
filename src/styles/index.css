@@ -30,6 +30,7 @@
         --input: #d4d4d8;
         --input-focus: #0284c7;
         --input-placeholder: #71717a;
+        --input-invalid: #ef4444;
     }
 
     [data-theme='dark'] {
@@ -59,6 +60,7 @@
         --input: #3f3f46;
         --input-focus: #7dd3fc;
         --input-placeholder: #a1a1aa;
+        --input-invalid: #fca5a5;
     }
 
     body {
