@@ -61,6 +61,11 @@ export default {
                     DEFAULT: 'var(--destructive)',
                     foreground: 'var(--destructive-foreground)',
                     hover: 'var(--destructive-hover)'
+                },
+                input: {
+                    DEFAULT: 'var(--input)',
+                    focus: 'var(--input-focus)',
+                    placeholder: 'var(--input-placeholder)'
                 }
             }
         }

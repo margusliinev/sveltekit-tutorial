@@ -26,6 +26,10 @@
         --destructive: #ef4444;
         --destructive-foreground: #fafafa;
         --destructive-hover: #dc2626;
+
+        --input: #d4d4d8;
+        --input-focus: #0284c7;
+        --input-placeholder: #71717a;
     }
 
     [data-theme='dark'] {
@@ -51,6 +55,10 @@
         --destructive: #f87171;
         --destructive-foreground: #18181b;
         --destructive-hover: #fca5a5;
+
+        --input: #3f3f46;
+        --input-focus: #7dd3fc;
+        --input-placeholder: #a1a1aa;
     }
 
     body {
