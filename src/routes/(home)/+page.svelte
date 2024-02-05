@@ -1,5 +1,5 @@
 <script>
-    import { Link } from '$components/ui'
+    import { ArrowRight, Link } from '$components'
 
     const currentDate = new Date(Date.now()).toUTCString().split(' ').slice(1, 3).join(' ')
 </script>
@@ -16,6 +16,9 @@
     </h2>
     <div class="mt-6 flex items-center justify-center gap-6 text-sm md:mt-12">
         <Link href="/register" variant="primary" size="md" class="rounded-full">Get Started</Link>
-        <Link href="/login">Want to demo? &rarr;</Link>
+        <Link href="/login" class="group">
+            Want to demo?
+            <ArrowRight size="14" strokeWidth="2" class="mt-0.5 transition-colors group-hover:text-primary" />
+        </Link>
     </div>
 </header>

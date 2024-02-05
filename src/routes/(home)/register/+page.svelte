@@ -1,5 +1,5 @@
 <script>
-    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components/ui'
+    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
 </script>
 
 <div class="my-20 w-screen-90 max-w-md rounded-lg border border-border bg-card px-6 py-8 shadow">

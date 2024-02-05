@@ -1,7 +1,6 @@
 <script lang="ts">
     /* eslint-disable */
-    import { Button, Link } from '$components/ui'
-    import { ThemeToggle } from '$components'
+    import { Button, Link, ThemeToggle, Menu, X } from '$components'
 
     let isMobileMenuOpen = $state(false)
 
@@ -31,7 +30,7 @@
                     <ThemeToggle />
                 </li>
             </ul>
-            <ul class={isMobileMenuOpen ? 'fixed inset-0 z-50 mt-16 bg-navbar p-8 sm:hidden' : 'hidden'}>
+            <ul class={isMobileMenuOpen ? 'fixed inset-0 z-40 mt-16 bg-navbar p-8 sm:hidden' : 'hidden'}>
                 <li class="flex w-full border-b border-border-strong py-4">
                     <ThemeToggle />
                 </li>
@@ -47,13 +46,9 @@
             </ul>
             <Button size="none" variant="ghost" onclick={toggleMobileMenu} class="sm:hidden" aria-label="toggle menu">
                 {#if isMobileMenuOpen}
-                    <svg class="h-6 w-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+                    <X />
                 {:else}
-                    <svg class="h-6 w-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                    <Menu />
                 {/if}
             </Button>
         </div>

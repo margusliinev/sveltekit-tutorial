@@ -1,6 +1,6 @@
 <script>
     /* eslint-disable */
-    import { Link } from '$components/ui'
+    import { ArrowRight, Link } from '$components'
     import { page } from '$app/stores'
 </script>
 
@@ -11,7 +11,10 @@
         <h3 class="text-foreground/80 mt-6 text-lg">We encountered an error and cannot fulfill the request.</h3>
         <div class="mt-8 flex items-center justify-center gap-6 text-sm font-semibold">
             <Link href="/" variant="primary" size="md" class="rounded-full">Go Back Home</Link>
-            <Link href="/login">Login Page &rarr;</Link>
+            <Link href="/login" class="group">
+                Login Page
+                <ArrowRight size="14" strokeWidth="2" class="mt-0.5 transition-colors group-hover:text-primary" />
+            </Link>
         </div>
     </section>
 </main>
