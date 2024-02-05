@@ -4,6 +4,10 @@
     import { page } from '$app/stores'
 </script>
 
+<svelte:head>
+    <title>Sprintpilot | Error</title>
+</svelte:head>
+
 <main class="grid h-screen min-h-screen w-screen place-items-center">
     <section class="w-screen-90 text-center">
         <h1 class="text-7xl font-bold text-primary">{$page.status}</h1>

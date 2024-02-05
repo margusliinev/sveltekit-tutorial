@@ -2,6 +2,10 @@
     import { Check, Link } from '$components'
 </script>
 
+<svelte:head>
+    <title>Sprintpilot | Pricing</title>
+</svelte:head>
+
 <section class="my-20">
     <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
         <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">

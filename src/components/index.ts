@@ -11,7 +11,7 @@ import Input from './base/Input.svelte'
 import InputError from './base/InputError.svelte'
 import Form from './base/Form.svelte'
 import FormField from './base/FormField.svelte'
-import ThemeToggle from './custom/ThemeToggle.svelte'
+import ThemeToggle from './misc/ThemeToggle.svelte'
 
 // BASE COMPONENTS
 export { Button, Link, Label, Input, InputError, Form, FormField }

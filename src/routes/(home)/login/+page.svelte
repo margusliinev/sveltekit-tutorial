@@ -2,6 +2,10 @@
     import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
 </script>
 
+<svelte:head>
+    <title>Sprintpilot | Login</title>
+</svelte:head>
+
 <div class="my-20 w-screen-90 max-w-md rounded-lg border border-border bg-card px-6 py-8 shadow">
     <div class="grid place-items-center text-center">
         <img src="logo-light.png" alt="light logo" width="50" height="50" class="hidden aspect-auto dark:block" />
