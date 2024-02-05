@@ -1,4 +1,5 @@
 import ArrowRight from 'lucide-svelte/icons/arrow-right'
+import Check from 'lucide-svelte/icons/check'
 import Moon from 'lucide-svelte/icons/moon'
 import Sun from 'lucide-svelte/icons/sun'
 import Menu from 'lucide-svelte/icons/menu'
@@ -19,4 +20,4 @@ export { Button, Link, Label, Input, InputError, Form, FormField }
 export { ThemeToggle }
 
 // ICONS
-export { ArrowRight, Moon, Sun, Menu, X }
+export { ArrowRight, Moon, Sun, Menu, X, Check }

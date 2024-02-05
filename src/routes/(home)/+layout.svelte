@@ -9,7 +9,7 @@
     }
 </script>
 
-<main class="grid h-screen min-h-screen w-screen place-items-center">
+<main class="grid h-full min-h-screen w-full place-items-center">
     <div class="fixed inset-0 -z-10 transform-gpu overflow-hidden opacity-40 blur-3xl" aria-hidden="true">
         <div class="h-full w-full bg-gradient-to-tr from-background to-foreground opacity-10"></div>
     </div>

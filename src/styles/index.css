@@ -4,28 +4,28 @@
 
 @layer base {
     :root {
-        --background: #f2faff;
+        --background: #f4fbff;
         --foreground: #18181b;
-        --navbar: #f2faff;
+        --navbar: #f4fbff;
 
         --primary: #0284c7;
-        --primary-foreground: #f2faff;
+        --primary-foreground: #f4fbff;
         --primary-hover: #0369a1;
 
         --secondary: #71717a;
-        --secondary-foreground: #f2faff;
+        --secondary-foreground: #f4fbff;
         --secondary-hover: #52525a;
 
         --success: #10b981;
-        --success-foreground: #f2faff;
+        --success-foreground: #f4fbff;
         --success-hover: #059669;
 
         --warning: #eab308;
-        --warning-foreground: #f2faff;
+        --warning-foreground: #f4fbff;
         --warning-hover: #ca8a04;
 
         --destructive: #ef4444;
-        --destructive-foreground: #f2faff;
+        --destructive-foreground: #f4fbff;
         --destructive-hover: #dc2626;
 
         --input: #fff;
@@ -40,7 +40,7 @@
 
     [data-theme='dark'] {
         --background: #18181b;
-        --foreground: #f2faff;
+        --foreground: #f4fbff;
         --navbar: #1c1c20;
 
         --primary: #7dd3fc;

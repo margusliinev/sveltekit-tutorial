@@ -18,7 +18,7 @@
         <Link href="/register" variant="primary" size="md" class="rounded-full">Get Started</Link>
         <Link href="/login" class="group">
             Want to demo?
-            <ArrowRight size="14" strokeWidth="2" class="mt-0.5 transition-colors group-hover:text-primary" />
+            <ArrowRight size="14" strokeWidth="2" class="mt-0.5 group-hover:text-primary" />
         </Link>
     </div>
 </header>

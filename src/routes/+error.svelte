@@ -13,7 +13,7 @@
             <Link href="/" variant="primary" size="md" class="rounded-full">Go Back Home</Link>
             <Link href="/login" class="group">
                 Login Page
-                <ArrowRight size="14" strokeWidth="2" class="mt-0.5 transition-colors group-hover:text-primary" />
+                <ArrowRight size="14" strokeWidth="2" class="mt-0.5 group-hover:text-primary" />
             </Link>
         </div>
     </section>
