@@ -1,10 +1,10 @@
 import type { Actions } from '@sveltejs/kit'
 import { createUser, getUserByEmail, getUserByUsername } from '$lib/server/models/user'
 import { createSession } from '$lib/server/models/session'
+import { fail, redirect } from '@sveltejs/kit'
+import { validateAction } from '$lib'
 import { hash } from '$lib/server/models/auth'
 import { env } from '$env/dynamic/private'
-import { validateAction } from '$lib'
-import { fail, redirect } from '@sveltejs/kit'
 import { z } from 'zod'
 
 const registerSchema = z.object({
@@ -43,7 +43,7 @@ export const actions: Actions = {
         const session = await createSession(newUser.id)
         if (!session) return fail(500, { error: 'Failed to create session' })
 
-        const hashedSession = await hash(String(session.id))
+        const hashedSession = await hash(session.id)
         if (!hashedSession) return fail(500, { error: 'Failed to hash session' })
 
         cookies.set('__session', hashedSession, {

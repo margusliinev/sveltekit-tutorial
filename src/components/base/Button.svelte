@@ -14,7 +14,7 @@
     let { children, variant, size, class: className, ...props } = $props<ButtonProps>()
 
     let buttonVariants = cva(
-        'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-offset-2 ring-offset-background focus-visible:ring-2 disabled:opacity-50 disabled:pointer-events-none',
+        'inline-flex items-center justify-center gap-2 rounded-md text-sm transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-offset-2 ring-offset-background focus-visible:ring-2 disabled:opacity-50 disabled:pointer-events-none',
         {
             variants: {
                 variant: {

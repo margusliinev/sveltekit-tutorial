@@ -1,9 +1,9 @@
 import 'dotenv/config'
 import { drizzle } from 'drizzle-orm/node-postgres'
 import { usersTable } from './schema'
-import mockUsers from './users.json'
-import bcrypt from 'bcryptjs'
+import { hash } from '../models/auth'
 import * as schema from './schema'
+import mockUsers from './users.json'
 import pg from 'pg'
 
 if (!process.env.DATABASE_URL) {
@@ -27,7 +27,9 @@ async function seed() {
 
     console.time(`👤 Created ${mockUsers.length} users`)
     for (const user of mockUsers) {
-        const hashedPassword = await bcrypt.hash(user.password, 10)
+        const hashedPassword = await hash(user.password)
+        if (!hashedPassword) throw new Error('Error during hashing password')
+
         await db.insert(usersTable).values({ username: user.username, email: user.email, password: hashedPassword })
     }
     console.timeEnd(`👤 Created ${mockUsers.length} users`)
