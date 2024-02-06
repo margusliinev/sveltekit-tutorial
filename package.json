@@ -24,7 +24,8 @@
         "drizzle-orm": "^0.29.3",
         "lucide-svelte": "^0.321.0",
         "pg": "^8.11.3",
-        "tailwind-merge": "^2.2.1"
+        "tailwind-merge": "^2.2.1",
+        "zod": "^3.22.4"
     },
     "devDependencies": {
         "@sveltejs/adapter-auto": "^3.0.0",

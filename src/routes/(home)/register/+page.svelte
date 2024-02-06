@@ -1,5 +1,6 @@
 <script>
     import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
+    import { page } from '$app/stores'
 </script>
 
 <svelte:head>
