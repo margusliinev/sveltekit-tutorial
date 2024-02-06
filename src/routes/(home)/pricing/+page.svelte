@@ -18,7 +18,7 @@
         <div class="space-y-8 sm:gap-6 lg:grid lg:grid-cols-3 lg:space-y-0 xl:gap-10">
             <div class="mx-auto flex max-w-lg flex-col rounded-lg border border-border bg-card p-6 text-center shadow-lg xl:p-8">
                 <h3 class="mb-4 text-2xl font-semibold">Hobby</h3>
-                <p class="font-light sm:text-lg">Best option for personal use & and small projects.</p>
+                <p class="dark:font-light sm:text-lg">Best option for personal use & and small projects.</p>
                 <div class="my-8 flex items-baseline justify-center">
                     <span class="mr-2 text-5xl font-semibold">$0</span>
                     <span>/month</span>
@@ -55,7 +55,7 @@
             </div>
             <div class="mx-auto flex max-w-lg flex-col rounded-lg border border-border bg-card p-6 text-center shadow-lg xl:p-8">
                 <h3 class="mb-4 text-2xl font-semibold">Startup</h3>
-                <p class="font-light sm:text-lg">Relevant for small agile teams who need extended support</p>
+                <p class="dark:font-light sm:text-lg">Relevant for small agile teams who need extended support</p>
                 <div class="my-8 flex items-baseline justify-center">
                     <span class="mr-2 text-5xl font-semibold">$99</span>
                     <span>/month</span>
@@ -92,7 +92,7 @@
             </div>
             <div class="mx-auto flex max-w-lg flex-col rounded-lg border border-border bg-card p-6 text-center shadow-lg xl:p-8">
                 <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
-                <p class="font-light sm:text-lg">Best for large teams with high usage and need for premium support.</p>
+                <p class="dark:font-light sm:text-lg">Best for large teams with high usage and need for premium support.</p>
                 <div class="my-8 flex items-baseline justify-center">
                     <span class="mr-2 text-5xl font-semibold">$799</span>
                     <span>/month</span>

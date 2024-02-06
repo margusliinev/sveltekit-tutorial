@@ -19,8 +19,8 @@
         {
             variants: {
                 variant: {
-                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary dark:font-semibold',
-                    ghost: 'focus-visible:ring-foreground'
+                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary font-medium dark:font-semibold',
+                    ghost: 'focus-visible:ring-foreground font-medium dark:font-normal'
                 },
                 size: {
                     none: 'px-0 py-0',

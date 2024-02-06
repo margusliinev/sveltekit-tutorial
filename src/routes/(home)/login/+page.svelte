@@ -11,7 +11,7 @@
         <img src="logo-light.png" alt="light logo" width="50" height="50" class="hidden aspect-auto dark:block" />
         <img src="logo-dark.png" alt="dark logo" width="50" height="50" class="visible aspect-auto dark:hidden" />
         <h1 class="mt-2 text-2xl font-semibold">Welcome back!</h1>
-        <h2 class="mb-8 text-sm">Please enter your credentials to log in!</h2>
+        <h2 class="mb-8 text-sm dark:font-light">Please enter your credentials to log in!</h2>
     </div>
     <Form method="POST">
         <FormField>
@@ -28,6 +28,6 @@
     </Form>
     <div class="mt-4 flex items-center justify-center gap-2">
         <span class="text-sm">Don't have an account?</span>
-        <Link href="/register" class="font-semibold text-primary hover:text-primary-hover">Register</Link>
+        <Link href="/register" class="text-primary hover:text-primary-hover">Register</Link>
     </div>
 </div>

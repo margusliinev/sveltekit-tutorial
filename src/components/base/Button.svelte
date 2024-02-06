@@ -18,12 +18,12 @@
         {
             variants: {
                 variant: {
-                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary dark:font-semibold',
-                    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-hover focus-visible:ring-secondary dark:font-semibold',
-                    success: 'bg-success text-success-foreground hover:bg-success-hover focus-visible:ring-success dark:font-semibold',
-                    warning: 'bg-warning text-warning-foreground hover:bg-warning-hover focus-visible:ring-warning dark:font-semibold',
-                    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive-hover focus-visible:ring-destructive dark:font-semibold',
-                    ghost: 'focus-visible:ring-foreground'
+                    primary: 'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary font-medium dark:font-semibold',
+                    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-hover focus-visible:ring-secondary font-medium dark:font-semibold',
+                    success: 'bg-success text-success-foreground hover:bg-success-hover focus-visible:ring-success font-medium dark:font-semibold',
+                    warning: 'bg-warning text-warning-foreground hover:bg-warning-hover focus-visible:ring-warning font-medium dark:font-semibold',
+                    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive-hover focus-visible:ring-destructive font-medium dark:font-semibold',
+                    ghost: 'focus-visible:ring-foreground font-medium dark:font-normal'
                 },
                 size: {
                     none: 'px-0 py-0',
