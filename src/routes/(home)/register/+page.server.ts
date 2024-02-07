@@ -3,7 +3,7 @@ import { createUser, getUserByEmail, getUserByUsername } from '$lib/server/model
 import { createSession } from '$lib/server/models/session'
 import { fail, redirect } from '@sveltejs/kit'
 import { validateAction } from '$lib'
-import { hash } from '$lib/server/models/auth'
+import { hashPassword } from '$lib/server/models/auth'
 import { env } from '$env/dynamic/private'
 import { z } from 'zod'
 
@@ -34,7 +34,7 @@ export const actions: Actions = {
         const existingEmail = await getUserByEmail(body.email)
         if (existingEmail) return fail(400, { email: 'Email is already in use' })
 
-        const hashedPassword = await hash(body.password)
+        const hashedPassword = await hashPassword(body.password)
         if (!hashedPassword) return fail(500, { error: 'Failed to hash password' })
 
         const newUser = await createUser({ ...body, password: hashedPassword })
@@ -43,14 +43,11 @@ export const actions: Actions = {
         const session = await createSession(newUser.id)
         if (!session) return fail(500, { error: 'Failed to create session' })
 
-        const hashedSession = await hash(session.id)
-        if (!hashedSession) return fail(500, { error: 'Failed to hash session' })
-
-        cookies.set('__session', hashedSession, {
+        cookies.set('__session', session.id, {
             path: '/',
             sameSite: 'lax',
             httpOnly: true,
-            maxAge: 1000 * 60 * 60 * 24 * 7,
+            maxAge: 7 * 24 * 60 * 60,
             secure: env.NODE_ENV === 'production'
         })
 

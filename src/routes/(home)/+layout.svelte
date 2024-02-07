@@ -15,7 +15,7 @@
     </div>
     <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center border-b border-border bg-navbar shadow">
         <div class="flex w-screen-90 max-w-6xl items-center justify-between">
-            <Link href="/" class="text-3xl font-extrabold uppercase italic">sprintpilot</Link>
+            <Link href="/" class="text-3xl font-extrabold uppercase italic dark:font-extrabold">sprintpilot</Link>
             <ul class="hidden items-center gap-8 sm:flex">
                 <li>
                     <Link href="/pricing">Pricing</Link>

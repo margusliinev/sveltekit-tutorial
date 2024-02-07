@@ -6,6 +6,9 @@
     let isPasswordError = $state<undefined | true>(undefined)
 
     $effect(() => {
+        isUsernameError = undefined
+        isEmailError = undefined
+        isPasswordError = undefined
         if (form?.username) {
             isUsernameError = true
         }
@@ -32,7 +35,7 @@
     <Form method="POST">
         <FormField>
             <Label for="username">Username</Label>
-            <Input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid={isUsernameError} />
+            <Input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid={isUsernameError} required />
             <InputError id="username-error">
                 {#if form?.username}
                     {form.username}
@@ -41,7 +44,7 @@
         </FormField>
         <FormField>
             <Label for="email">Email</Label>
-            <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={isEmailError} />
+            <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={isEmailError} required />
             <InputError id="email-error">
                 {#if form?.email}
                     {form.email}
@@ -50,7 +53,7 @@
         </FormField>
         <FormField>
             <Label for="password">Password</Label>
-            <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={isPasswordError} />
+            <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={isPasswordError} required />
             <InputError id="password-error">
                 {#if form?.password}
                     {form.password}

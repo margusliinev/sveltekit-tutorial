@@ -19,10 +19,10 @@ export const actions: Actions = {
 
         cookies.set('theme', theme, {
             path: '/',
-            maxAge: 60 * 60 * 24 * 365,
             sameSite: 'lax',
             httpOnly: true,
-            secure: true
+            maxAge: 365 * 24 * 60 * 60,
+            secure: env.NODE_ENV === 'production'
         })
 
         const redirectToURL = new URL(redirectTo)

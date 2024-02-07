@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs'
 
-export function hash(secret: string) {
+export function hashPassword(password: string) {
     try {
-        const hash = bcrypt.hash(secret, 10)
+        const hash = bcrypt.hash(password, 10)
         return hash
     } catch (error) {
         console.error(error)
@@ -10,9 +10,9 @@ export function hash(secret: string) {
     }
 }
 
-export function verify(secret: string, hashedSecret: string) {
+export function verifyPassword(password: string, hashedPassword: string) {
     try {
-        const isMatch = bcrypt.compare(secret, hashedSecret)
+        const isMatch = bcrypt.compare(password, hashedPassword)
         return isMatch
     } catch (error) {
         console.error(error)

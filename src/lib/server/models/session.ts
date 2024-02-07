@@ -1,5 +1,5 @@
 import type { Session } from '$lib/server/db/schema'
-import { usersTable, sessionsTable } from '$lib/server/db/schema'
+import { sessionsTable } from '$lib/server/db/schema'
 import { and, eq, gt } from 'drizzle-orm'
 import { db } from '$lib/server/db'
 
@@ -22,8 +22,8 @@ export async function getUserBySessionId(sessionId: Session['id']) {
     try {
         const result = await db.query.sessionsTable.findFirst({
             columns: {},
-            with: { user: { columns: { id: true } } },
-            where: and(eq(usersTable.id, sessionId), gt(sessionsTable.expires_at, new Date()))
+            with: { user: { columns: { id: true, username: true } } },
+            where: and(eq(sessionsTable.id, sessionId), gt(sessionsTable.expires_at, new Date()))
         })
         return result?.user
     } catch (error) {

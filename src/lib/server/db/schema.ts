@@ -1,5 +1,5 @@
 import { pgTableCreator, index, timestamp, varchar, uuid } from 'drizzle-orm/pg-core'
-import { relations, sql } from 'drizzle-orm'
+import { relations } from 'drizzle-orm'
 
 // PREFIX
 
@@ -18,7 +18,7 @@ export const usersTable = pgTable('users', {
 
 export const sessionsTable = pgTable('sessions', {
     id: uuid('id').primaryKey().defaultRandom().notNull(),
-    expires_at: timestamp('expires_at', { mode: 'date' }).notNull(),
+    expires_at: timestamp('expires_at', { mode: 'date', withTimezone: true, precision: 0 }).notNull(),
     created_at: timestamp('created_at', { mode: 'date', withTimezone: true, precision: 0 }).defaultNow().notNull(),
     updated_at: timestamp('updated_at', { mode: 'date', withTimezone: true, precision: 0 }).defaultNow().notNull(),
     user_id: uuid('user_id').references(() => usersTable.id, { onDelete: 'cascade', onUpdate: 'cascade' }).notNull()
