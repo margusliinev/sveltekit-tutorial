@@ -1,5 +1,20 @@
-<script>
+<script lang="ts">
     import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
+
+    let { form } = $props()
+    let isEmailError = $state<undefined | true>(undefined)
+    let isPasswordError = $state<undefined | true>(undefined)
+
+    $effect(() => {
+        isEmailError = undefined
+        isPasswordError = undefined
+        if (form?.email) {
+            isEmailError = true
+        }
+        if (form?.password) {
+            isPasswordError = true
+        }
+    })
 </script>
 
 <svelte:head>
@@ -16,13 +31,21 @@
     <Form method="POST">
         <FormField>
             <Label for="email">Email</Label>
-            <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={undefined} />
-            <InputError id="email-error"></InputError>
+            <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={isEmailError} required />
+            <InputError id="email-error">
+                {#if form?.email}
+                    {form.email}
+                {/if}
+            </InputError>
         </FormField>
         <FormField>
             <Label for="password">Password</Label>
-            <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={undefined} />
-            <InputError id="password-error"></InputError>
+            <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={isPasswordError} required />
+            <InputError id="password-error">
+                {#if form?.password}
+                    {form.password}
+                {/if}
+            </InputError>
         </FormField>
         <Button size="sm" class="mt-2">Login</Button>
     </Form>

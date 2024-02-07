@@ -25,7 +25,6 @@ const registerSchema = z.object({
 export const actions: Actions = {
     default: async ({ request, cookies }) => {
         const { body, errors } = await validateAction<z.infer<typeof registerSchema>>({ request, schema: registerSchema })
-
         if (errors) return fail(400, errors)
 
         const existingUsername = await getUserByUsername(body.username)
