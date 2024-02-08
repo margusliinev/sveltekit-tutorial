@@ -1,15 +1,14 @@
 import type { Actions } from '@sveltejs/kit'
 import { createUser, getUserByEmail, getUserByUsername } from '$lib/server/models/user'
+import { validateAction, hashPassword } from '$lib'
 import { createSession } from '$lib/server/models/session'
 import { fail, redirect } from '@sveltejs/kit'
-import { validateAction } from '$lib'
-import { hashPassword } from '$lib/server/models/auth'
 import { env } from '$env/dynamic/private'
 import { z } from 'zod'
 
 const registerSchema = z.object({
     username: z
-        .string({ invalid_type_error: 'Username is invalid', required_error: 'Username is required' })
+        .string({ invalid_type_error: 'Username is invalid' })
         .min(3, { message: 'Username must be between 3 and 39 characters' })
         .max(39, { message: 'Username must be between 3 and 39 characters' })
         .regex(/^[^-].*[^-]$/, { message: 'Username cannot start or end with a hyphen' })

@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { drizzle } from 'drizzle-orm/node-postgres'
 import { usersTable } from './schema'
-import { hashPassword } from '../models/auth'
+import { hashPassword } from '$lib'
 import * as schema from './schema'
 import mockUsers from './users.json'
 import pg from 'pg'

@@ -3,10 +3,7 @@ import type { ZodError } from 'zod'
 import { ZodSchema } from 'zod'
 import { twMerge } from 'tailwind-merge'
 import { clsx } from 'clsx'
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs))
-}
+import bcrypt from 'bcryptjs'
 
 export async function validateAction<ActionInput>({ request, schema }: { request: Request; schema: ZodSchema }) {
     const fromData = Object.fromEntries(await request.formData())
@@ -26,4 +23,28 @@ export async function validateAction<ActionInput>({ request, schema }: { request
         )
         return { errors }
     }
+}
+
+export function hashPassword(password: string) {
+    try {
+        const hash = bcrypt.hash(password, 10)
+        return hash
+    } catch (error) {
+        console.error(error)
+        return null
+    }
+}
+
+export function verifyPassword(password: string, hashedPassword: string) {
+    try {
+        const isMatch = bcrypt.compare(password, hashedPassword)
+        return isMatch
+    } catch (error) {
+        console.error(error)
+        return false
+    }
+}
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
 }

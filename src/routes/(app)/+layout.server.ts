@@ -1,8 +1,7 @@
 import type { ServerLoad } from '@sveltejs/kit'
 
-export const load: ServerLoad = async ({ locals, url }) => {
+export const load: ServerLoad = async ({ locals }) => {
     return {
-        user: locals.user,
-        route: url.pathname
+        user: locals.user
     }
 }

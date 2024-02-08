@@ -1,9 +1,8 @@
 import type { Actions } from '@sveltejs/kit'
 import { getUserByEmailWithPassword } from '$lib/server/models/user'
+import { validateAction, verifyPassword } from '$lib'
 import { createSession } from '$lib/server/models/session'
 import { fail, redirect } from '@sveltejs/kit'
-import { validateAction } from '$lib'
-import { verifyPassword } from '$lib/server/models/auth'
 import { env } from '$env/dynamic/private'
 import { z } from 'zod'
 
