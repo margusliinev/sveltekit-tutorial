@@ -29,10 +29,7 @@ export const authHook = (async ({ event, resolve }) => {
     const session = event.cookies.get('__session')
     const path = event.url.pathname
 
-    if (publicPages.includes(path)) {
-        if (session) return redirect(303, '/dashboard')
-        return await resolve(event)
-    }
+    if (publicPages.includes(path)) return await resolve(event)
 
     if (!session) return redirect(303, '/login')
 
@@ -42,7 +39,7 @@ export const authHook = (async ({ event, resolve }) => {
         return redirect(303, '/login')
     }
 
-    event.locals.user = { id: user.id, username: user.username }
+    event.locals.user = { id: user.id, username: user.username, email: user.email, created_at: user.created_at, updated_at: user.updated_at }
 
     return await resolve(event)
 }) satisfies Handle

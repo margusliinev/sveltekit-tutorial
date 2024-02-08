@@ -22,7 +22,7 @@ export async function getUserBySessionId(sessionId: Session['id']) {
     try {
         const result = await db.query.sessionsTable.findFirst({
             columns: {},
-            with: { user: { columns: { id: true, username: true } } },
+            with: { user: { columns: { password: false } } },
             where: and(eq(sessionsTable.id, sessionId), gt(sessionsTable.expires_at, new Date()))
         })
         return result?.user

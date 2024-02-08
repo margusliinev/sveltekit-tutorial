@@ -1,6 +1,11 @@
-import type { Actions } from '@sveltejs/kit'
+import type { ServerLoad, Actions } from '@sveltejs/kit'
 import { redirect } from '@sveltejs/kit'
 import { env } from '$env/dynamic/private'
+
+export const load: ServerLoad = async ({ cookies }) => {
+    const session = cookies.get('__session')
+    if (session) throw redirect(303, '/dashboard')
+}
 
 export const actions: Actions = {
     setTheme: async ({ cookies, url }) => {
