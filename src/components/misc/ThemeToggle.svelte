@@ -1,7 +1,7 @@
 <script lang="ts">
+    /* eslint-disable */
     import type { SubmitFunction } from '@sveltejs/kit'
     import { Moon, Sun, Button, Form } from '$components'
-    /* eslint-disable */
     import { page } from '$app/stores'
 
     const submitUpdateTheme: SubmitFunction = ({ action }) => {

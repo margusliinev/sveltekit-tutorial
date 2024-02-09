@@ -21,7 +21,7 @@
         <h1 class="mt-2 text-2xl font-semibold">Welcome back!</h1>
         <h2 class="mb-8 text-sm dark:font-light">Please enter your credentials to log in!</h2>
     </div>
-    <Form method="POST">
+    <Form method="POST" action="/?/login">
         <FormField type="email" label="email" error={emailError} required />
         <FormField type="password" label="password" error={passwordError} required />
         <Button size="sm" class="mt-2">Login</Button>

@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit'
-import { redirect } from '@sveltejs/kit'
 import { getUserBySessionId } from '$lib/server/models/session'
 import { sequence } from '@sveltejs/kit/hooks'
+import { redirect } from '@sveltejs/kit'
 
 export const themeHook = (async ({ event, resolve }) => {
     let theme: string | null = null

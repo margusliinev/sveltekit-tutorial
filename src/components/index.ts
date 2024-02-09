@@ -1,4 +1,5 @@
 import ArrowRight from 'lucide-svelte/icons/arrow-right'
+import User from 'lucide-svelte/icons/user'
 import Check from 'lucide-svelte/icons/check'
 import Moon from 'lucide-svelte/icons/moon'
 import Sun from 'lucide-svelte/icons/sun'
@@ -21,4 +22,4 @@ export { Button, Link, Label, Input, InputError, Form, FormField }
 export { ThemeToggle, Logo }
 
 // ICONS
-export { ArrowRight, Moon, Sun, Menu, X, Check }
+export { ArrowRight, Moon, Sun, Menu, X, Check, User }

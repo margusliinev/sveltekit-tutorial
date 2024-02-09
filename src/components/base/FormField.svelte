@@ -22,5 +22,9 @@
 <div {...props} class={cn(formFieldVariants({ className }))}>
     <Label for={label}>{label}</Label>
     <Input {type} id={label} name={label} aria-describedby={`${label}-error`} aria-invalid={error ? true : undefined} oninput={() => (error = '')} {minlength} {maxlength} {required} />
-    <InputError id={`${label}-error`}>{error}</InputError>
+    <InputError id={`${label}-error`}>
+        {#if error}
+            {error}
+        {/if}
+    </InputError>
 </div>
