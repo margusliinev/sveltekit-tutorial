@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
+    import { Button, Link, FormField, Form } from '$components'
     let { form } = $props()
 
     let usernameError = $state<string | undefined>(undefined)
@@ -25,10 +25,10 @@
         <h2 class="mb-8 text-sm dark:font-light">And lets get you started with a free plan</h2>
     </div>
     <Form method="POST">
-        <FormField label="username" type="text" error={usernameError} />
-        <FormField label="email" type="email" error={emailError} />
-        <FormField label="password" type="password" error={passwordError} />
-        <Button size="sm" class="mt-2">Register</Button>
+        <FormField type="text" label="username" error={usernameError} required />
+        <FormField type="email" label="email" error={emailError} required />
+        <FormField type="password" label="password" error={passwordError} required />
+        <Button size="sm">Register</Button>
     </Form>
     <div class="mt-4 flex items-center justify-center gap-2">
         <span class="text-sm">Already have an account?</span>

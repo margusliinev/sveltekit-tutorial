@@ -11,15 +11,18 @@
         label: string
         type: HTMLInputAttributes['type']
         error: string | undefined
+        minlength?: number
+        maxlength?: number
+        required?: boolean
     }
 
-    let { children, label, type, error, class: className, ...props } = $props<FormFieldProps>()
+    let { children, label, type, error, minlength = 0, maxlength = 100, required = true, class: className, ...props } = $props<FormFieldProps>()
 
     let formFieldVariants = cva('space-y-1')
 </script>
 
 <div {...props} class={cn(formFieldVariants({ className }))}>
     <Label for={label}>{label}</Label>
-    <Input {type} id={label} name={label} aria-describedby={`${label}-error`} aria-invalid={error ? true : undefined} oninput={() => (error = '')} />
+    <Input {type} id={label} name={label} aria-describedby={`${label}-error`} aria-invalid={error ? true : undefined} oninput={() => (error = '')} {minlength} {maxlength} {required} />
     <InputError id={`${label}-error`}>{error}</InputError>
 </div>
