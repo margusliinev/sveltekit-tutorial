@@ -25,7 +25,7 @@
                 <ThemeToggle />
             </li>
         </ul>
-        <ul class={isMobileMenuOpen ? 'fixed inset-0 z-40 mt-16 bg-navbar p-8 sm:hidden' : 'hidden'}>
+        <ul class={isMobileMenuOpen ? 'fixed inset-0 z-50 mt-16 bg-navbar p-8 sm:hidden' : 'hidden'}>
             <li class="flex w-full border-b border-border-strong py-4">
                 <ThemeToggle />
             </li>

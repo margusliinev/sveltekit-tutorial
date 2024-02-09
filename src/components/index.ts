@@ -12,12 +12,13 @@ import InputError from './base/InputError.svelte'
 import Form from './base/Form.svelte'
 import FormField from './base/FormField.svelte'
 import ThemeToggle from './misc/ThemeToggle.svelte'
+import Logo from './misc/Logo.svelte'
 
 // BASE COMPONENTS
 export { Button, Link, Label, Input, InputError, Form, FormField }
 
 // CUSTOM COMPONENTS
-export { ThemeToggle }
+export { ThemeToggle, Logo }
 
 // ICONS
 export { ArrowRight, Moon, Sun, Menu, X, Check }

@@ -1,13 +1,11 @@
 <script lang="ts">
     import type { HTMLAttributes, HTMLInputAttributes } from 'svelte/elements'
     import type { VariantProps } from 'class-variance-authority'
-    import type { Snippet } from 'svelte'
     import { Label, Input, InputError } from '$components'
     import { cva } from 'class-variance-authority'
     import { cn } from '$lib'
 
     interface FormFieldProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof formFieldVariants> {
-        children?: Snippet
         label: string
         type: HTMLInputAttributes['type']
         error: string | undefined
@@ -16,7 +14,7 @@
         required?: boolean
     }
 
-    let { children, label, type, error, minlength = 0, maxlength = 100, required = true, class: className, ...props } = $props<FormFieldProps>()
+    let { label, type, error, minlength = 0, maxlength = 100, required = true, class: className, ...props } = $props<FormFieldProps>()
 
     let formFieldVariants = cva('space-y-1')
 </script>

@@ -11,7 +11,7 @@
         <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
             <h1 class="mb-4 text-5xl font-bold tracking-tight">Pricing</h1>
             <h2 class="mb-4 text-2xl font-semibold tracking-tight xxs:text-3xl">Designed for business teams like yours</h2>
-            <p class="mb-5 font-light sm:text-xl">
+            <p class="mb-5 dark:font-light sm:text-xl">
                 We have you covered, no matter the size of your team. Unsure which plan is right for you? Start with the plan that suits your needs today, and upgrade later.
             </p>
         </div>
