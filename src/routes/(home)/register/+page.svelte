@@ -1,23 +1,15 @@
 <script lang="ts">
     import { Button, Input, InputError, Label, Link, FormField, Form } from '$components'
     let { form } = $props()
-    let isUsernameError = $state<undefined | true>(undefined)
-    let isEmailError = $state<undefined | true>(undefined)
-    let isPasswordError = $state<undefined | true>(undefined)
+
+    let usernameError = $state<string | undefined>(undefined)
+    let emailError = $state<string | undefined>(undefined)
+    let passwordError = $state<string | undefined>(undefined)
 
     $effect(() => {
-        isUsernameError = undefined
-        isEmailError = undefined
-        isPasswordError = undefined
-        if (form?.username) {
-            isUsernameError = true
-        }
-        if (form?.email) {
-            isEmailError = true
-        }
-        if (form?.password) {
-            isPasswordError = true
-        }
+        usernameError = form?.username
+        emailError = form?.email
+        passwordError = form?.password
     })
 </script>
 
@@ -33,33 +25,9 @@
         <h2 class="mb-8 text-sm dark:font-light">And lets get you started with a free plan</h2>
     </div>
     <Form method="POST">
-        <FormField>
-            <Label for="username">Username</Label>
-            <Input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid={isUsernameError} required />
-            <InputError id="username-error">
-                {#if form?.username}
-                    {form.username}
-                {/if}
-            </InputError>
-        </FormField>
-        <FormField>
-            <Label for="email">Email</Label>
-            <Input type="email" id="email" name="email" aria-describedby="email-error" aria-invalid={isEmailError} required />
-            <InputError id="email-error">
-                {#if form?.email}
-                    {form.email}
-                {/if}
-            </InputError>
-        </FormField>
-        <FormField>
-            <Label for="password">Password</Label>
-            <Input type="password" id="password" name="password" aria-describedby="password-error" aria-invalid={isPasswordError} required />
-            <InputError id="password-error">
-                {#if form?.password}
-                    {form.password}
-                {/if}
-            </InputError>
-        </FormField>
+        <FormField label="username" type="text" error={usernameError} />
+        <FormField label="email" type="email" error={emailError} />
+        <FormField label="password" type="password" error={passwordError} />
         <Button size="sm" class="mt-2">Register</Button>
     </Form>
     <div class="mt-4 flex items-center justify-center gap-2">

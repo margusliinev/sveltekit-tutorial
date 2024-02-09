@@ -12,7 +12,7 @@
 
     let { children, for: htmlFor, class: className, ...props } = $props<LabelProps>()
 
-    let labelVariants = cva('text-sm leading-none font-medium dark:font-normal peer-disabled:cursor-not-allowed peer-disabled:opacity-70')
+    let labelVariants = cva('text-sm leading-none font-medium dark:font-normal peer-disabled:cursor-not-allowed peer-disabled:opacity-70 capitalize')
 </script>
 
 {#if children}
