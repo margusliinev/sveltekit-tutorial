@@ -2,6 +2,4 @@
     let { data } = $props()
 </script>
 
-<main class="grid h-full min-h-screen w-full place-items-center">
-    <h1 class="text-xl font-medium">Welcome back, {data.user.username}!</h1>
-</main>
+<h1 class="text-xl font-medium">Welcome back, {data.user.username}!</h1>
