@@ -15,14 +15,12 @@ import InputError from './base/InputError.svelte'
 import Form from './base/Form.svelte'
 import FormField from './base/FormField.svelte'
 import Dropdown from './base/Dropdown.svelte'
-import DropdownTrigger from './base/DropdownTrigger.svelte'
-import DropdownContent from './base/DropdownContent.svelte'
 import DropdownItem from './base/DropdownItem.svelte'
 import ThemeToggle from './misc/ThemeToggle.svelte'
 import Logo from './misc/Logo.svelte'
 
 // BASE COMPONENTS
-export { Button, Link, Label, Input, InputError, Form, FormField, Dropdown, DropdownTrigger, DropdownContent, DropdownItem }
+export { Button, Link, Label, Input, InputError, Form, FormField, Dropdown, DropdownItem }
 
 // CUSTOM COMPONENTS
 export { ThemeToggle, Logo }

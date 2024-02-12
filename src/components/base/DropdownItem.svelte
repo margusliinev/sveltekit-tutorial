@@ -9,15 +9,13 @@
         children?: Snippet
     }
 
-    let dropdownItemVariants = cva('')
+    let dropdownItemVariants = cva('grid')
 
     let { children, class: className, ...props } = $props<DropdownItemProps>()
 </script>
 
 {#if children}
-    <div {...props} class={cn(dropdownItemVariants({ className }))}>
-        {@render children()}
-    </div>
+    <div {...props} class={cn(dropdownItemVariants({ className }))} role="menuitem" tabindex="0">{@render children()}</div>
 {:else}
-    <div {...props} class={cn(dropdownItemVariants({ className }))}></div>
+    <div {...props} class={cn(dropdownItemVariants({ className }))} role="menuitem" tabindex="0"></div>
 {/if}
