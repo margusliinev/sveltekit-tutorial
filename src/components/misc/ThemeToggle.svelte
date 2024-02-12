@@ -14,10 +14,10 @@
 </script>
 
 <Form method="post" submitFunction={submitUpdateTheme}>
-    <Button variant="ghost" size="none" formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="absolute scale-100 transition-transform duration-300 dark:scale-0">
+    <Button variant="ghost" size="none" formaction="/?/setTheme&theme=dark&redirectTo={$page.url}" class="inline-flex dark:hidden">
         <Sun size="20" />
     </Button>
-    <Button variant="ghost" size="none" formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="scale-0 transition-transform duration-300 dark:scale-100">
+    <Button variant="ghost" size="none" formaction="/?/setTheme&theme=light&redirectTo={$page.url}" class="hidden dark:inline-flex">
         <Moon size="20" />
     </Button>
 </Form>

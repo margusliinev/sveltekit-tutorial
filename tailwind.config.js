@@ -75,7 +75,8 @@ export default {
                     strong: 'var(--border-strong)'
                 },
                 card: {
-                    DEFAULT: 'var(--card)'
+                    DEFAULT: 'var(--card)',
+                    hover: 'var(--card-hover)'
                 }
             }
         }
