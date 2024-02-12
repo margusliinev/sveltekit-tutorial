@@ -5,22 +5,15 @@
     import { cva } from 'class-variance-authority'
     import { cn } from '$lib'
 
-    interface DropdownProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof buttonVariants> {
+    interface DropdownProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof dropdownVariants> {
         children: Snippet
-        open: boolean
     }
 
-    let buttonVariants = cva('grid')
+    let dropdownVariants = cva('relative')
 
-    let { children, open = false, class: className, ...props } = $props<DropdownProps>()
-
-    function openDropdown() {
-        open = !open
-    }
+    let { children, class: className, ...props } = $props<DropdownProps>()
 </script>
 
-<div {...props} class={cn(buttonVariants({ className }))} onclick={openDropdown} role="menu" tabindex="0">
-    {#if open}
-        {@render children()}
-    {/if}
+<div {...props} class={cn(dropdownVariants({ className }))}>
+    {@render children()}
 </div>

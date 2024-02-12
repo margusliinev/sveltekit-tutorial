@@ -1,5 +1,12 @@
 <script lang="ts">
-    import { Button, Link, ThemeToggle, User, Form } from '$components'
+    import { Button, Link, ThemeToggle, User, Form, Dropdown, DropdownTrigger, DropdownContent, ChevronDown, ChevronUp, DropdownItem } from '$components'
+    let { data } = $props()
+
+    let isOpen = $state(false)
+
+    function toggleDropdown() {
+        isOpen = !isOpen
+    }
 </script>
 
 <nav class="fixed top-0 z-50 grid h-16 w-full place-items-center border-b border-border bg-navbar shadow-sm">
@@ -7,9 +14,27 @@
         <Link href="/" class="text-3xl font-extrabold uppercase italic dark:font-extrabold">sprintpilot</Link>
         <div class="flex items-center gap-8">
             <ThemeToggle />
-            <Form method="post" action="/?/logout">
-                <Button variant="primary" size="sm">Logout<User size="20" /></Button>
-            </Form>
+            <Dropdown>
+                <DropdownTrigger {isOpen} {toggleDropdown}>
+                    <User size="20" />
+                    {data.user.username}
+                    {#if isOpen}
+                        <ChevronUp size={18} class="mt-1" />
+                    {:else}
+                        <ChevronDown size={18} class="mt-1" />
+                    {/if}
+                </DropdownTrigger>
+                <DropdownContent {isOpen}>
+                    <DropdownItem>
+                        <Link href="/profile" variant="ghost">Your account</Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <Form method="post" action="/?/logout">
+                            <Button variant="ghost" size="none">Logout</Button>
+                        </Form>
+                    </DropdownItem>
+                </DropdownContent>
+            </Dropdown>
         </div>
     </div>
 </nav>
