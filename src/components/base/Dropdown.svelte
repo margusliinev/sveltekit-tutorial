@@ -26,17 +26,16 @@
     }
 
     function closeDropdown(e: FocusEvent) {
-        if ((e.relatedTarget as HTMLElement)?.parentElement?.role === 'menuitem') return
-        if ((e.relatedTarget as HTMLElement)?.parentElement?.parentElement?.role === 'menuitem') return
+        if (open && (e.relatedTarget as HTMLElement)?.closest('[role="menu"]')) return
         open = false
     }
 </script>
 
-<Button variant="ghost" size="none" class="py-3" aria-haspopup="menu" aria-expanded={open} onclick={toggleDropdown} onkeydown={escapeDropdown} onblur={closeDropdown}>
+<Button variant="ghost" size="none" class="py-3" aria-haspopup="menu" aria-expanded={open} onclick={toggleDropdown} onkeyup={escapeDropdown} onblur={closeDropdown}>
     {@render trigger()}
 </Button>
 {#if open}
-    <div {...props} class={cn(dropdownVariants({ className }))} role="menu" transition:fly|local={{ duration: 100 }}>
+    <div {...props} class={cn(dropdownVariants({ className }))} role="menu" transition:fly|local={{ duration: 100 }} onfocusout={closeDropdown}>
         {@render children()}
     </div>
 {/if}

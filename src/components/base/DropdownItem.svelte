@@ -9,16 +9,16 @@
 
     interface DropdownItemProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof dropdownItemVariants> {
         children?: Snippet
+        submitFunction?: SubmitFunction
         type: 'link' | 'button'
-        href?: string
         method?: string
         action?: string
-        submitFunction?: SubmitFunction
+        href?: string
     }
 
     let dropdownItemVariants = cva('text-sm hover:bg-border last-of-type:rounded-b-md first-of-type:rounded-t-md transition-colors')
 
-    let { children, type = 'link', href, method, action, submitFunction, class: className, ...props } = $props<DropdownItemProps>()
+    let { children, submitFunction, type = 'link', method, action, href, class: className, ...props } = $props<DropdownItemProps>()
 </script>
 
 {#if children && type === 'link'}
