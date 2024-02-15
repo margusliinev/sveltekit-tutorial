@@ -1,7 +1,9 @@
 <script lang="ts">
     import type { HTMLAttributes } from 'svelte/elements'
     import type { VariantProps } from 'class-variance-authority'
+    import type { DropdownState } from './DropdownState.svelte'
     import type { Snippet } from 'svelte'
+    import { getContext } from 'svelte'
     import { cva } from 'class-variance-authority'
     import { cn } from '$lib'
 
@@ -9,23 +11,11 @@
         children: Snippet
     }
 
+    const dropdown = getContext<DropdownState>('dropdown')
+
     let dropdownItemVariants = cva('text-sm hover:bg-border last-of-type:rounded-b-md first-of-type:rounded-t-md transition-colors')
 
     let { children, class: className, ...props } = $props<DropdownItemProps>()
-
-    function handleKeyDown(e: KeyboardEvent) {
-        let element = e.currentTarget as HTMLDivElement
-        let nextElement = element.nextElementSibling as HTMLDivElement
-        let previousElement = element.previousElementSibling as HTMLDivElement
-
-        if (e.key === 'ArrowUp' && previousElement?.role === 'menuitem') {
-            previousElement.focus()
-        } else if (e.key === 'ArrowDown' && nextElement?.role === 'menuitem') {
-            nextElement.focus()
-        } else if (e.key === 'Enter' && element.firstElementChild?.firstElementChild instanceof HTMLButtonElement) {
-            element.firstElementChild.firstElementChild.click()
-        }
-    }
 </script>
 
-<div {...props} class={cn(dropdownItemVariants({ className }))} role="menuitem" tabindex={-1} onkeydown={handleKeyDown}>{@render children()}</div>
+<div {...props} class={cn(dropdownItemVariants({ className }))} role="menuitem" tabindex={-1} onkeydown={dropdown.handleKeyDown}>{@render children()}</div>

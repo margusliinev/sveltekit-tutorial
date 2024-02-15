@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Link, ThemeToggle, User, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger } from '$components'
+    import { Link, ThemeToggle, User, Dropdown, DropdownMenu, DropdownItem, DropdownButton, Form, Button } from '$components'
     let { data } = $props()
 </script>
 
@@ -9,11 +9,19 @@
         <div class="flex items-center gap-8">
             <ThemeToggle />
             <Dropdown>
-                <DropdownTrigger><User size="20" />{data.user.username}</DropdownTrigger>
+                <DropdownButton icon>
+                    <User size="20" />
+                    <span>{data.user.username}</span>
+                </DropdownButton>
                 <DropdownMenu>
-                    <DropdownItem><a href="settings">Settings</a></DropdownItem>
-                    <DropdownItem><a href="profile">Your account</a></DropdownItem>
-                    <DropdownItem><a href="logout">Sign out</a></DropdownItem>
+                    <DropdownItem>
+                        <Link href="profile" class="px-3 py-2">Your account</Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <Form method="POST" action="/?/logout">
+                            <Button variant="ghost" size="none" class="justify-start px-3 py-2">Logout</Button>
+                        </Form>
+                    </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         </div>

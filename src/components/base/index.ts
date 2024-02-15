@@ -8,6 +8,6 @@ import FormField from './FormField.svelte'
 import Dropdown from './dropdown/Dropdown.svelte'
 import DropdownMenu from './dropdown/DropdownMenu.svelte'
 import DropdownItem from './dropdown/DropdownItem.svelte'
-import DropdownTrigger from './dropdown/DropdownTrigger.svelte'
+import DropdownButton from './dropdown/DropdownButton.svelte'
 
-export { Button, Link, Label, Input, InputError, Form, FormField, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger }
+export { Button, Link, Label, Input, InputError, Form, FormField, Dropdown, DropdownMenu, DropdownItem, DropdownButton }

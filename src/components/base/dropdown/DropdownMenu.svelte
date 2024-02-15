@@ -14,7 +14,7 @@
 
     const dropdown = getContext<DropdownState>('dropdown')
 
-    let dropdownMenuVariants = cva('absolute top-12 right-0 bg-background ring-1 ring-border ring-inset rounded-md z-50 animate-fade-in-down')
+    let dropdownMenuVariants = cva('absolute top-12 right-0 bg-background ring-1 ring-border ring-inset rounded-md z-50')
 
     let { children, class: className, ...props } = $props<DropdownMenuProps>()
 </script>
