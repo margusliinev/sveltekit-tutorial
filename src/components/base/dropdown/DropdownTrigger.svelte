@@ -1,15 +1,17 @@
 <script lang="ts">
     import type { HTMLButtonAttributes } from 'svelte/elements'
     import type { VariantProps } from 'class-variance-authority'
-    import { getContext, type Snippet } from 'svelte'
+    import type { DropdownState } from './DropdownState.svelte'
+    import type { Snippet } from 'svelte'
+    import { getContext } from 'svelte'
     import { cva } from 'class-variance-authority'
     import { cn } from '$lib'
 
     interface DropdownTriggerProps extends HTMLButtonAttributes, VariantProps<typeof dropdownTriggerVariants> {
-        children?: Snippet
+        children: Snippet
     }
 
-    const dropdown = getContext<{ open: boolean; toggle: () => void }>('dropdown')
+    const dropdown = getContext<DropdownState>('dropdown')
 
     let { children, class: className, ...props } = $props<DropdownTriggerProps>()
 
@@ -18,8 +20,14 @@
     )
 </script>
 
-{#if children}
-    <button aria-expanded={dropdown.open} aria-haspopup="menu" {...props} class={cn(dropdownTriggerVariants({ className }))} onclick={dropdown.toggle}>{@render children()}</button>
-{:else}
-    <button {...props} class={cn(dropdownTriggerVariants({ className }))}></button>
-{/if}
+<button
+    aria-expanded={dropdown.open}
+    aria-haspopup="menu"
+    {...props}
+    class={cn(dropdownTriggerVariants({ className }))}
+    onclick={dropdown.handleClick}
+    onkeydown={dropdown.handleKeyDown}
+    onblur={dropdown.handleOutsideClick}
+>
+    {@render children()}
+</button>

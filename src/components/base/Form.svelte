@@ -8,7 +8,7 @@
     import { cn } from '$lib'
 
     interface FormProps extends HTMLFormAttributes, VariantProps<typeof formVariants> {
-        children?: Snippet
+        children: Snippet
         submitFunction?: SubmitFunction
     }
 
@@ -17,8 +17,4 @@
     let formVariants = cva('grid gap-4')
 </script>
 
-{#if children}
-    <form {...props} use:enhance={submitFunction} class={cn(formVariants({ className }))}>{@render children()}</form>
-{:else}
-    <form {...props} class={cn(formVariants({ className }))}></form>
-{/if}
+<form {...props} use:enhance={submitFunction} class={cn(formVariants({ className }))}>{@render children()}</form>

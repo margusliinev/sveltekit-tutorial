@@ -6,7 +6,7 @@
     import { cn } from '$lib'
 
     interface ButtonProps extends HTMLButtonAttributes, VariantProps<typeof buttonVariants> {
-        children?: Snippet
+        children: Snippet
         variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'destructive' | 'ghost'
         size?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     }
@@ -42,8 +42,4 @@
     )
 </script>
 
-{#if children}
-    <button {...props} class={cn(buttonVariants({ variant, size, className }))}>{@render children()}</button>
-{:else}
-    <button {...props} class={cn(buttonVariants({ variant, size, className }))}></button>
-{/if}
+<button {...props} class={cn(buttonVariants({ variant, size, className }))}>{@render children()}</button>

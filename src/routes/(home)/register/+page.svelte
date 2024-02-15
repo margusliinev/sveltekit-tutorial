@@ -23,10 +23,10 @@
         <h1 class="mt-2 text-2xl font-semibold">Create an account</h1>
         <h2 class="mb-8 text-sm dark:font-light">And lets get you started with a free plan</h2>
     </div>
-    <Form method="POST" action="/?/register">
-        <FormField type="text" label="username" error={usernameError} required />
-        <FormField type="email" label="email" error={emailError} required />
-        <FormField type="password" label="password" error={passwordError} required />
+    <Form method="POST">
+        <FormField type="text" label="username" error={usernameError} />
+        <FormField type="email" label="email" error={emailError} />
+        <FormField type="password" label="password" error={passwordError} />
         <Button size="sm" class="mt-2">Register</Button>
     </Form>
     <div class="mt-4 flex items-center justify-center gap-2">

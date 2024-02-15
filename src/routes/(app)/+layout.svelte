@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { Link, ThemeToggle, User, Dropdown, DropdownMenu, DropdownItem, Button } from '$components'
-    import DropdownTrigger from '$components/base/dropdown/DropdownTrigger.svelte'
+    import { Link, ThemeToggle, User, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger } from '$components'
     let { data } = $props()
 </script>
 
@@ -12,9 +11,9 @@
             <Dropdown>
                 <DropdownTrigger><User size="20" />{data.user.username}</DropdownTrigger>
                 <DropdownMenu>
-                    <DropdownItem>Settings</DropdownItem>
-                    <DropdownItem>Your account</DropdownItem>
-                    <DropdownItem>Sign out</DropdownItem>
+                    <DropdownItem><a href="settings">Settings</a></DropdownItem>
+                    <DropdownItem><a href="profile">Your account</a></DropdownItem>
+                    <DropdownItem><a href="logout">Sign out</a></DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         </div>

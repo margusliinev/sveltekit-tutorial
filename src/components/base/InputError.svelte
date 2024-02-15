@@ -6,7 +6,7 @@
     import { cn } from '$lib'
 
     interface InputErrorProps extends HTMLAttributes<HTMLSpanElement>, VariantProps<typeof inputErrorVariants> {
-        children?: Snippet
+        children: Snippet
         id: string
     }
 
@@ -15,8 +15,4 @@
     let inputErrorVariants = cva('block text-sm text-input-invalid')
 </script>
 
-{#if children}
-    <span {...props} {id} class={cn(inputErrorVariants({ className }))}>{@render children()}</span>
-{:else}
-    <span {...props} {id} class={cn(inputErrorVariants({ className }))}></span>
-{/if}
+<span {...props} {id} class={cn(inputErrorVariants({ className }))}>{@render children()}</span>
