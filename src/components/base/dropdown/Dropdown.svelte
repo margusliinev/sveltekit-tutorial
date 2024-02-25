@@ -12,7 +12,7 @@
         children: Snippet
     }
 
-    const dropdown = createDropdownState({ open: true })
+    const dropdown = createDropdownState({ open: false })
     setContext<DropdownState>('dropdown', dropdown)
 
     let dropdownVariants = cva('grid relative')
